@@ -35,9 +35,15 @@ public class StepDefinitions {
 	@Given("that the user enters the values")
 	public void that_the_user_enters_the_values() {
 	    // Write code here that turns the phrase above into concrete actions
-		String browser=System.getProperty("browser");		
+		String browser=System.getProperty("browser","chrome");
+		if(browser.equals("chrome"))
+			[
 		System.out.println(browser);
-		
+	}
+	else
+	{
+		System.out.println(browser);
+	}
 		
 		System.out.println("water5");
 	}
@@ -48,3 +54,4 @@ public class StepDefinitions {
 
 
 }
+
