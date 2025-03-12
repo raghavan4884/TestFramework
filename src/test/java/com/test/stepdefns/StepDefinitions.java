@@ -38,6 +38,7 @@ public class StepDefinitions {
 		String browser=System.getenv("browser");
 		String url=System.getenv("url");
 		System.out.println(browser);
+		System.out.println(url);
 		System.out.println("water5");
 	}
 
