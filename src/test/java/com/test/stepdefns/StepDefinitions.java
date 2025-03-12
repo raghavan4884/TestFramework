@@ -36,7 +36,7 @@ public class StepDefinitions {
 	public void that_the_user_enters_the_values() {
 	    // Write code here that turns the phrase above into concrete actions
 		String browser=System.getProperty("browser");		
-		String tags="";
+		System.out.println(browser);
 		
 		
 		System.out.println("water5");
