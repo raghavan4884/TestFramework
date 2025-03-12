@@ -1,7 +1,7 @@
 package com.test.stepdefns;
 
 import io.cucumber.java.en.Given;
-
+import java.util.*;
 public class StepDefinitions {
 	
 
@@ -35,6 +35,20 @@ public class StepDefinitions {
 	@Given("that the user enters the values")
 	public void that_the_user_enters_the_values() {
 	    // Write code here that turns the phrase above into concrete actions
+		String browser="";
+		String url="";
+		String tags="";
+		Properties prop=new Properties();
+		try
+			{
+		FileInputStream fis=new FileInputStream("src/test/resources/General.properties");
+				prop.load(fis);
+				
+			}
+		catch(Exception e)
+			{
+			
+					}
 		
 		System.out.println("water5");
 	}
