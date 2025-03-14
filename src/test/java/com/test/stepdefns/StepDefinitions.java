@@ -40,6 +40,7 @@ public class StepDefinitions {
 		System.out.println(browser);
 		System.out.println(url);
 		System.out.println("water5");
+		System.out.println("water7");
 	}
 
 
