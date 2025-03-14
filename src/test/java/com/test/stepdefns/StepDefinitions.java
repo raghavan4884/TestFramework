@@ -35,8 +35,8 @@ public class StepDefinitions {
 	@Given("that the user enters the values")
 	public void that_the_user_enters_the_values() {
 	    // Write code here that turns the phrase above into concrete actions
-		String browser=System.getproperty("browser");
-		String url=System.getproperty("url");
+		String browser=System.getProperty("browser");
+		String url=System.getProperty("url");
 		System.out.println(browser);
 		System.out.println(url);
 		System.out.println("water5");
