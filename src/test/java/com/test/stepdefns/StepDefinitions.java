@@ -38,8 +38,8 @@ public class StepDefinitions {
 	    // Write code here that turns the phrase above into concrete actions
 		String browser=System.getenv("browser");
 		String url=System.getenv("url");
-		System.out.println(browser);
-		System.out.println(url);
+		System.out.println("browser"+ browser);
+		System.out.println("url"+url);
 		System.out.println("water5");
 		System.out.println("water77");
 	}
