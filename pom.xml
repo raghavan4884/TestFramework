@@ -131,6 +131,16 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.4.2</version>
+          <configuration>
+                <includes>
+                    <include>**/*Runner.class</include>
+                </includes>
+                <systemPropertyVariables>
+                    <cucumber.options>
+                        @target/rerun.txt
+                    </cucumber.options>
+                </systemPropertyVariables>
+            </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
