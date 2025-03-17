@@ -5,8 +5,7 @@ v.pipeline {
     }
     parameters {
         string(name: 'tags', defaultValue: '@Regression', description: 'Enter the Cucumber tags to run')
-        string(name: 'browser', defaultValue: 'edge', description: '')
-        string(name: 'url', defaultValue: 'https://www.google.com', description: '')
+       
     }
     stages {
         stage("Build") {
