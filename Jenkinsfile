@@ -4,14 +4,25 @@ pipeline {
         maven "MAVEN_HOME" // Ensure "MAVEN_HOME" is the actual name of the Maven tool configured in Jenkins
     }
 
-
+parameters
+    {
+        string(name='tags', value='@Regression')
+    }
+    
    
         stages {
+        stage("Clean") {
+            steps {
+                git branch:'main',url:'https://github.com/raghavan4884/TestFramework.git'
+                bat 'mvn clean' // Use 'sh' to run shell commands in a pipeline
+                //build job: 'FirstMavenProject', parameters: [string(name: 'browser', value: 'edge'), string(name: 'url', value: 'https://www.google.com'), string(name: 'tags', value: '"@Smoke or @Regression"')]
+                
+              }
+        }
         stage("Build") {
             steps {
-             //   git branch:'main',url:'https://github.com/raghavan4884/TestFramework.git'
-              //  bat 'mvn clean' // Use 'sh' to run shell commands in a pipeline
-                build job: 'FirstMavenProject', parameters: [string(name: 'browser', value: 'edge'), string(name: 'url', value: 'https://www.google.com'), string(name: 'tags', value: '"@Smoke or @Regression"')]
+
+                bat 'mvn build -Dcucumber.filter.tags=$tags -Dcucumber.plugin="json:target/reports.json"'
                 
               }
         }
