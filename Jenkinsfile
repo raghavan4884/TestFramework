@@ -15,7 +15,7 @@ v.pipeline {
                 bat "mvn test -Dcucumber.filter.tags='${tags}' -Dcucumber.plugin='json:target/reports.json'"
             }
         }
-        
+
     }
     post
     {
