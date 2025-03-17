@@ -6,7 +6,7 @@ pipeline {
 
 parameters
     {
-       string(name: 'tags', value: '"@Smoke"')
+       string(name: 'tags', defaultValue: '"@Smoke"')
     }
     
    
