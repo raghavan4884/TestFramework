@@ -12,7 +12,7 @@ v.pipeline {
         }
         stage("Test") {
             steps {
-                bat 'mvn test -Dcucumber.filter.tags=${env.tags} -Dcucumber.plugin="json:target/reports.json"'
+                bat 'mvn test -Dcucumber.filter.tags=${tags} -Dcucumber.plugin="json:target/reports.json"'
             }
         }
         
