@@ -13,7 +13,7 @@ pipeline {
         }
         stage("Test") {
             steps {
-                bat 'mvn test -Dcucumber.filter.tags="@Smoke or @Regression" -Dcucumber.plugin="json:target/reports.json"'
+                bat 'mvn test -Dcucumber.plugin="json:target/reports.json"'
             }
         }
 
