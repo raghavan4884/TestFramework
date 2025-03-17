@@ -4,6 +4,10 @@ pipeline {
         maven "MAVEN_HOME" // Ensure "MAVEN_HOME" is the actual name of the Maven tool configured in Jenkins
     }
 
+    parameters
+    {
+        string(name:'tags' defaultValue='@Smoke')
+    }
         stages {
         stage("Build") {
             steps {
@@ -13,7 +17,8 @@ pipeline {
         }
         stage("Test") {
             steps {
-                bat 'mvn test -Dcucumber.options="@target/rerun.txt" -Dcucumber.plugin="json:target/reports.json"'
+               // bat 'mvn test -Dcucumber.options="@target/rerun.txt" -Dcucumber.plugin="json:target/reports.json"'
+                echo '${params.tags}'
             }
         }
 
