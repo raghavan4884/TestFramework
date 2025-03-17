@@ -4,11 +4,7 @@ pipeline {
         maven "MAVEN_HOME" // Ensure "MAVEN_HOME" is the actual name of the Maven tool configured in Jenkins
     }
 
-    parameters
-    {
-        string(name: 'tags',defaultValue:'@Smoke')
-    }
-    stages {
+        stages {
         stage("Build") {
             steps {
                 git branch:'main',url:'https://github.com/raghavan4884/TestFramework.git'
@@ -17,7 +13,7 @@ pipeline {
         }
         stage("Test") {
             steps {
-                bat 'mvn test -Dcucumber.filter.tags="'${params.tags}'" -Dcucumber.plugin="json:target/reports.json"'
+                bat 'mvn test -Dcucumber.filter.tags="@Smoke or @Regression" -Dcucumber.plugin="json:target/reports.json"'
             }
         }
 
