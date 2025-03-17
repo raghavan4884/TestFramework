@@ -8,7 +8,7 @@ pipeline {
         stage("Build") {
             steps {
                 git branch:'main',url:'https://github.com/raghavan4884/TestFramework.git'
-                //bat 'mvn clean' // Use 'sh' to run shell commands in a pipeline
+                bat 'mvn clean' // Use 'sh' to run shell commands in a pipeline
             }
         }
         stage("Test") {
