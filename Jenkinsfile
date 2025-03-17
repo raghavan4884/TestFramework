@@ -1,4 +1,4 @@
-pipeline {
+v.pipeline {
     agent any
     tools {
         maven "MAVEN_HOME" // Ensure "MAVEN_HOME" is the actual name of the Maven tool configured in Jenkins
@@ -12,7 +12,7 @@ pipeline {
         }
         stage("Test") {
             steps {
-                bat 'mvn test -Dcucumber.filter.tags=${tags} -Dcucumber.plugin="json:target/reports.json"'
+                bat 'mvn test -Dcucumber.filter.tags=${env.tags} -Dcucumber.plugin="json:target/reports.json"'
             }
         }
         
