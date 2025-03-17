@@ -6,7 +6,7 @@ pipeline {
 
     parameters
     {
-        string(name:'tags' defaultValue='@Smoke')
+        string(name:'tags', defaultValue='@Smoke')
     }
         stages {
         stage("Build") {
