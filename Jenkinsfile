@@ -8,12 +8,12 @@ pipeline {
         stage("Build") {
             steps {
                 git branch:'main',url:'https://github.com/raghavan4884/TestFramework.git'
-                bat 'mvn clean' // Use 'sh' to run shell commands in a pipeline
+                //bat 'mvn clean' // Use 'sh' to run shell commands in a pipeline
             }
         }
         stage("Test") {
             steps {
-                bat 'mvn test -Dcucumber.plugin="json:target/reports.json"'
+                bat 'mvn test -Dcucumber.options="@target/rerun.txt" -Dcucumber.plugin="json:target/reports.json"'
             }
         }
 
