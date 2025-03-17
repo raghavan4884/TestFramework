@@ -4,10 +4,6 @@ pipeline {
         maven "MAVEN_HOME" // Ensure "MAVEN_HOME" is the actual name of the Maven tool configured in Jenkins
     }
 
-parameters
-    {
-       string(name: 'tags', defaultValue: '"@Smoke"')
-    }
     
    
         stages {
@@ -22,17 +18,17 @@ parameters
         stage("Build") {
             steps {
 
-                bat 'mvn test -Dcucumber.filter.tags=${params.tags} -Dcucumber.plugin="json:target/reports.json"'
+                bat 'mvn test -Dcucumber.plugin="json:target/reports.json"'
                 
               }
         }
    
     }
-    // post
-    // {
-    //     success
-    //     {
-    //         cucumber buildStatus: 'UNCHANGED', customCssFiles: '', customJsFiles: '', failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
-    //     }
-    // }
+    post
+    {
+        success
+        {
+            cucumber buildStatus: 'UNCHANGED', customCssFiles: '', customJsFiles: '', failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
+        }
+    }
 }
