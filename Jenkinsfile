@@ -6,7 +6,7 @@ pipeline {
 
 parameters
     {
-        string(name='tags', value='@Regression')
+        string(name:'tags', value:'@Regression')
     }
     
    
