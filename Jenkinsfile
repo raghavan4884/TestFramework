@@ -4,13 +4,17 @@ pipeline {
         maven "MAVEN_HOME" // Ensure "MAVEN_HOME" is the actual name of the Maven tool configured in Jenkins
     }
 
-    
+
+    parameters
+    {
+        string(name:'tags' value='@Smoke' description='value')
+    }
         stages {
         stage("Build") {
             steps {
              //   git branch:'main',url:'https://github.com/raghavan4884/TestFramework.git'
               //  bat 'mvn clean' // Use 'sh' to run shell commands in a pipeline
-                echo 'hello'
+                echo '${params.tags}'
             }
         }
         stage("Test") {
