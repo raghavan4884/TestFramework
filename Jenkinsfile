@@ -6,7 +6,7 @@ pipeline {
 
     parameters
     {
-        string(name:'tags', defaultValue='@Smoke')
+        string(name:'tags', defaultValue='@Smoke' description="value")
     }
         stages {
         stage("Build") {
@@ -18,7 +18,7 @@ pipeline {
         stage("Test") {
             steps {
                // bat 'mvn test -Dcucumber.options="@target/rerun.txt" -Dcucumber.plugin="json:target/reports.json"'
-                echo '${params.tags}'
+                echo "${params.tags}"
             }
         }
 
