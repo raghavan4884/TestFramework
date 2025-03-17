@@ -3,10 +3,7 @@ pipeline {
     tools {
         maven "MAVEN_HOME" // Ensure "MAVEN_HOME" is the actual name of the Maven tool configured in Jenkins
     }
-    parameters {
-        string(name: 'tags', defaultValue: '@Regression', description: 'Enter the Cucumber tags to run')
-       
-    }
+    
     stages {
         stage("Build") {
             steps {
@@ -16,7 +13,7 @@ pipeline {
         }
         stage("Test") {
             steps {
-                bat 'mvn test -Dcucumber.filter.tags=${params.tags} -Dcucumber.plugin="json:target/reports.json"'
+                bat 'mvn test -Dcucumber.filter.tags="'${tags}'" -Dcucumber.plugin="json:target/reports.json"'
             }
         }
 
