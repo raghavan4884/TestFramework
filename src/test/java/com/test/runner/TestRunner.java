@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 
-@CucumberOptions(features="src/test/resources/Features",glue= {"com.test.stepdefns"},monochrome=true,dryRun=false,plugin= {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","json:target/reports.json","rerun:target/rerun.txt"})
+@CucumberOptions(features="src/test/resources/Features",glue= {"com.test.stepdefns"},monochrome=true,dryRun=false,plugin= {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","json:target/reports.json","rerun:target/rerun.txt","html:target/reports.html"})
 
 public class TestRunner {
 
