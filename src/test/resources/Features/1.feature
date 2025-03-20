@@ -1,6 +1,6 @@
 Feature: First Feature
 
-@Smoke
+@Smoke @Reg
 Scenario: Verify Feature Functionality
 Given that the user enters the value
 
