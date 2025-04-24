@@ -17,7 +17,6 @@ pipeline {
         }
         stage("Build") {
             steps {
-
                 bat 'mvn test -Dcucumber.plugin="json:target/reports.json" -Dcucumber.filter.tags="@Regression"'
                 
               }
