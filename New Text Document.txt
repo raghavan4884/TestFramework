@@ -10,9 +10,3 @@ sdf
 s
 
 dsf
-
-dfs
-
-sdf
-fsd
-
